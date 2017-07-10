@@ -9,7 +9,7 @@
 	<packaging>jar</packaging>
 
 	<name>mars-robot</name>
-	<description>A Spring Boot application to control a Robot's moviments in Mars.</description>
+	<description>A Spring Boot application to control a Robot's movements in Mars.</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -19,16 +19,19 @@
 	</parent>
 
 	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
 	</properties>
 
 	<dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter</artifactId>
-		</dependency>
+		    <groupId>commons-logging</groupId>
+		    <artifactId>commons-logging</artifactId>
+		    <version>1.2</version>
+		</dependency>        
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
