@@ -11,7 +11,7 @@ public class MarsController {
 	
 	@RequestMapping(method = RequestMethod.POST, value="/{movements}")
     public String greeting(@PathVariable String movements) {
-        return "(2, 0, S)";
+        return new RobotPosition(2, 0, Orientation.S).toString();
     }
 
 }
