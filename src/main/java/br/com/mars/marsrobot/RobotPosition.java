@@ -2,9 +2,9 @@ package br.com.mars.marsrobot;
 
 public class RobotPosition {
 	
-	private int x;
-	private int y;
-	private Orientation o = Orientation.W;
+	protected int x;
+	protected int y;
+	private Orientation o = Orientation.N;
 	
 	public RobotPosition() {
 	}
@@ -23,8 +23,21 @@ public class RobotPosition {
 	public void move(String movements) {
 		String[] movementsArray = movements.split("");		
 		for (String movement : movementsArray) {
-			Movement.valueOf(movement);
+			Movement.valueOf(movement).move(this);
 		}
+	}
+	
+	public void moveLeft() {
+		o = o.getLeftOrientation();
+	}
+	
+	public void moveRight() {
+		o = o.getRightOrientation();
+	}
+
+	public void moveOnePosition() {
+		o.move(this);
+		if(x>=5 || y>=5 || x<0 || y<0) throw new IllegalStateException();
 	}
 
 }

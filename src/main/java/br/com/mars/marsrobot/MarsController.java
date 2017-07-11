@@ -20,7 +20,9 @@ public class MarsController {
 			return ResponseEntity.ok(position.toString());
 		} catch (IllegalArgumentException e) {
 			return ResponseEntity.badRequest().body(BAD_REQUEST_MESSAGE);
-		}        
+		} catch (IllegalStateException e) {
+			return ResponseEntity.badRequest().body(BAD_REQUEST_MESSAGE);
+		}
     }
 
 }
